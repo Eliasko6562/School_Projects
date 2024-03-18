@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+}
+
+ul ol {
+    list-style-type: upper-roman;
+}
+
+ul ol ol {
+    list-style-type: lower-alpha;
+}
+
+table {
+    width: 700px;
+    border-spacing: 0;
+    border-collapse: separate;
+    border: 2px solid black;
+}
+
+thead {
+    background-color: #fdd;
+}
+
+th, td {
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+tfoot {
+    background-color: #fdd;
+}
+
