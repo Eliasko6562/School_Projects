@@ -1,0 +1,21 @@
+u {
+    text-decoration: 0.5px underline dotted;
+}
+
+td, tr, th {
+    border: 1.5px inset black;
+}
+
+table {
+    border: 1.5px outset black;
+}
+
+*{
+    font-family: serif;
+}
+
+body{
+    margin-left: 22.5%;
+    margin-right: 22.5%;
+    font-size: 22.5px;
+}

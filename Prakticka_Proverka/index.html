@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Constantine</title>
+  </head>
+  <body>
+
+    <header>
+      <h1>Příprava na praktickou prověrku</h1>
+      <ul>
+        <li><a href="#textove-upravy">Textové úpravy</a></li>
+        <li><a href="#tabulka">Tabulka</a></li>
+      </ul>
+    </header>
+
+    <main>
+    <h2 id="textove-upravy">Textové úpravy</h2>
+    <h3>Adresy používané na internetu</h3>
+    <p>
+      <strong>URL adresa</strong> je kompletní zápis <i>www stránky</i>, který najdete ve vyhledávacím
+      řádku.<br>Krom onoho počátečního <mark>https://</mark> (což je bezpečnostní <b>http protokol</b>)
+      a www je součástí <br>URL název domény a také adresa konkrétní podstránky,
+      uvedená za lomítkem. <br>Tento článek má URL adresu:
+      <mark><em>www.webglobe.cz/blog/co-je-domena.</em></mark>
+    </p>
+    <h3>Seznam významných termínů a zkratek</h3>
+    <dl>
+        <dt><abbr title="Hyper Text Markup Language">HTML</abbr></dt>
+        <dd>Jazyk, který se používá k vytváření obsahu webové stránky.<dd>
+        <dt><abbr title="Hyper Text Transfer Protocol">HTTP</abbr></dt>
+        <dd>Slouží pro přenos hypertextových dokumentů ve formátu HTML, XML, i jiných typů souborů.<dd>
+        <dt>Validátor</dt>
+        <dd>automatický nástroj umožňující ověřit validitu dokumentu, 
+          tj. najít případné chyby v zápisu kódu jeho porovnáním s platnými standardy.</dd>
+        <dt>Server</dt>
+        <dd>označení pro počítač, který poskytuje nějaké služby, nebo počítačový program, 
+          který tyto služby realizuje.<dd>
+    </dl>
+        <h2 id="tabulka">Tabulka</h2>
+        <table>
+
+          <thead>
+            <tr>
+              <th rowspan="2">Nečíslovaný seznam</th>
+              <th colspan="2">Prvky stránky</th>
+              <th rowspan="2">Obrázek (šířka 200px)</th>
+            </tr>
+            <tr>
+              <th>Značky</th>
+              <th>Entity</th>
+            </tr>  
+          </thead>
+
+          <tbody>
+          <tr>
+            <td rowspan="2">
+              <ul>
+                <li>IP adresa</li>
+                <li>Jmenná adresa</li>
+                <li>URL</li>
+              </ul>
+            </td>
+            <td>H<sub>2</sub>0</td>
+            <td>&</td>
+            <td rowspan="2"><img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Trulli" width="200"></td>
+          </tr>
+
+          <tr>
+            <td>c = a<sup>2</sup> + b<sup>2</sup></td>
+            <td>&#169;</td>
+          </tr> 
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td>Odkaz</td>
+              <td colspan="3"><a href="https://www.w3schools.com/html/html_tables.asp">www.w3schools.com</a></td>
+            </tr>
+          </tfoot>
+
+        </table>
+
+    </main>
+
+    <footer>
+        <hr>
+        <p>&copy; <mark>Eliáš Constantine</mark>,<b> IT1</b>, <u>SŠPU</u> Opava</p>
+    </footer>
+
+  </body>
+</html>
