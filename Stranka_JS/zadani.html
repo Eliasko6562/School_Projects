@@ -34,7 +34,22 @@
             </p>
           </blockquote>
           <div class="bg-info p-3">
-            <p>Zde bude řešení.</p>
+            <p>
+              JS je skriptovací jazyk, který se používá pro interaktivní
+                    prvky na webových stránkách jako:
+              <ul>
+                <li>INTERAKTVNI PRVKY:
+                  <a href="https://codepen.io/anon/pen/IiFeo">Roztrzitelny Hadrik</a>
+                </li>
+                <li>OZDOBY:
+                  <a href="https://pbutcher.uk/flipdown/">Hodiny</a>
+                </li>
+                <li>
+                  HRY:
+                  <a href="https://codepen.io/pbutcher/pen/oNogxZW?editors=0010">Wordle</a>
+                </li>
+              </ul>
+            </p>
           </div>
         </div>
         <div class="col-sm-6 bg-secondary text-light p-5">
@@ -44,7 +59,15 @@
             <p class="text-warning">Použij angličtinu!</p>
           </blockquote>
           <div class="bg-info p-3">
-            <p>Zde bude řešení.</p>
+            <p>
+              <ol>
+                <li>camelCase for variable names</li>
+                <li>const, var or let for variable declaration</li>
+                <li>single quotes for strings</li>
+                <li>semicolons at the end of each statement (optional)</li>
+                <li>Use comments to explain your code!</li>
+              </ol>
+            </p>
           </div>
         </div>
       </div>
@@ -60,8 +83,14 @@
           </blockquote>
           <div class="bg-light p-3">
             <code>
-              // 1. Vložit kód do tagu script<br />
-              &lt;script&gt;console.log('Hello');&lt;/script&gt;
+              // 1. Vložit kód do tagu script<br/>
+              &lt;script src="./scripts/example.js"&gt;&lt;/script&gt;
+              <br />
+              // 2. Vložit kód do tagu head<br />
+              &lt;script&gt;...&lt;/script&gt;
+              <br />
+              // 3. Vložit kód do tagu body<br />
+              &lt;script&gt;...&lt;/script&gt;
             </code>
           </div>
         </div>
@@ -80,12 +109,12 @@
             <code>
               let x = 0; // s přiřazením hodnoty<br />
               let x; // bez přiřazení hodnoty<br />
-              let x = null; // ...<br />
-              ... // celé číslo (typ number)<br />
-              ... // reálné číslo (typ number)<br />
-              ... // zápis desetinného čísla pomocí exponentu<br />
-              ... // typ string<br />
-              let prestupny = false // ...<br />
+              let x = null; // hodnota null<br />
+              let x = 42; // celé číslo (typ number)<br />
+              let x = 3.14; // reálné číslo (typ number)<br />
+              let x = 1.23e5; // zápis desetinného čísla pomocí exponentu<br />
+              let str = "Hello, World!"; // typ string<br />
+              let prestupny = false; // logická hodnota (typ boolean)<br />
             </code>
           </div>
         </div>
@@ -110,23 +139,24 @@
             </code>
             <h4>Přiřazovací</h4>
             <code>
-              ...
+              =, +=, -=, *=, /=, %=, **=
             </code>
             <h4>Logické</h4>
             <code>
-              ...
+              && (a), || (nebo), ! (negace)
             </code>
             <h4>Porovnávací</h4>
             <code>
-              ...
+              ==, ===, !=, !==, >, <, >=, <=
             </code>
             <h4>Bitové</h4>
             <code>
-              ...
+              & (AND), | (OR), ^ (XOR), ~ (NOT),<br> << (posun vlevo), >> (posun
+              vpravo),<br> >>> (posun vpravo s nulovým doplněním)
             </code>
             <h4>Typové</h4>
             <code>
-              typeof (typ proměnné), instanceof (...)
+              typeof (typ proměnné), instanceof (testování objektového typu)
             </code>
           </div>
         </div>
