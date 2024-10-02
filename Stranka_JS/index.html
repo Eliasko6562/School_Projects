@@ -175,23 +175,25 @@
           <div class="bg-light text-danger p-3">
             <h4>alert()</h4>
             <code>
-              /* ... */<br />
+                /*vyskočí okno se zprávou že zadal špatné heslo. musí kliknout na "OK", aby zavřel a mohl pokračovat. */<br />
               alert('Nezadal jsi správné heslo!');
             </code>
             <h4>prompt()</h4>
             <code>
               /* Do proměnné password vloží heslo zadané uživatelem */<br />
-              ...
+              let password = prompt('Zadejte heslo:');
             </code>
             <h4>confirm()</h4>
             <code>
-              /* ... */<br />
+              /*zobrazí potvrzovací okno s otázkou "Chceš...Seznam.cz?". 
+              Pokud "OK", bude přesměrován na https://seznam.cz.*/<br />
               if (confirm('Chceš přejít na stránky Seznam.cz?'))
               location.href='https://seznam.cz';
             </code>
             <hr />
             <p class="alert alert-primary" role="alert">
-              Varování:
+              Varování: Popup okna mohou být blokována v prohlížeči 
+                        a jsou špíše rušivá pro uživatele.
             </p>
           </div>
         </div>
@@ -224,7 +226,14 @@
             <p>Zde bude řešení.</p>
           </div>
           <script>
-          <!-- Zadejte JS kód -->
+          let jmeno = "Elias";
+          let prijmeni = "Constantine";
+          let vaha = 70;
+          let vyska = 176;
+          let pozdrav = `Ahoj, jsem ${jmeno} ${prijmeni}`;
+          let info = `Vazim ${vaha} kg a merim ${vyska} cm.`;
+          let escape = "\"Toto je text v uvozovkach\".";
+          document.getElementById("sedmy").innerHTML = `${pozdrav}<br>${info}<br>${escape}`;
           </script>
         </div>
         <div class="col-sm-6 bg-secondary text-light p-5">
@@ -246,7 +255,15 @@
             Oblast myších zájmů
           </div>
           <script>
-          <!-- Zadejte JS kód -->
+            let element = document.getElementById("osmy");
+            element.onmouseover = function() {
+              element.style.color = "Pink";
+              element.style.fontSize = "20px";
+            };
+            element.onmouseout = function() {
+              element.style.color = "white";
+              element.style.fontSize = "16px";
+            };
           </script>
         </div>
       </div>
@@ -276,7 +293,20 @@
             </button>
           </div>
           <script>
-            <!-- Zadejte JS kód -->
+            function sudeLiche(cislo) {
+              if (cislo == 0) {
+              return "Nula";
+              } else if (cislo % 2 == 0) {
+              return "Sude";
+              } else {
+              return "Liche";
+              }
+            }
+            let click = document.querySelector("button");
+            click.onclick = () => {
+              let cislo = prompt("Zadej cislo:");
+              console.log(sudeLiche(cislo));
+            };
           </script>
         </div>
         <div class="col-sm-6 bg-secondary text-light p-5">
@@ -298,10 +328,21 @@
             </ol>
           </blockquote>
           <div class="bg-light p-3">
-            <a href="">Vypiš den</a>
+            <a onclick = alert(denVTydnu()); href="#/">Vypiš den</a>
           </div>
           <script>
-           <!-- Zadejte JS kód -->
+            function denVTydnu() {
+              let dny = ["Nedele", "Pondeli", "Utery", "Streda", "Ctvrtek", "Patek", "Sobota"];
+              let dnes = new Date();
+              let den = dnes.getDay();
+              switch (den) {
+              case 0:
+              case 6:
+                return "Vikend";
+              default:
+                return dny[den];
+              }
+            }
           </script>
         </div>
       </div>
