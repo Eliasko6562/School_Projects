@@ -358,7 +358,17 @@
           <div class="bg-info p-3" id="jedenacty">
           </div>
           <script>
-            <!-- Zadejte JS kód -->
+            function prestupneRoky(rok1, rok2) {
+              let roky = [];
+              for (let i = rok1; i <= rok2; i++) {
+                if ((i % 4 == 0 && i % 100 != 0) || i % 400 == 0) {
+                  roky.push(i);
+                }
+              }
+              return roky;
+            }
+            document.getElementById("jedenacty").innerHTML = prestupneRoky(2000, 2020);
+
           </script>
         </div>
         <div class="col-sm-6 bg-secondary text-light p-5">
@@ -371,7 +381,19 @@
           <div class="bg-info p-3" id="dvanacty">            
           </div>
           <script>
-            <!-- Zadejte JS kód -->
+            cislo = Math.floor(Math.random() * 100);
+            console.log("Nahodne cislo je:", cislo);
+            function prvocislo(cislo) {
+              let i = 2;
+              while (i < cislo) {
+                if (cislo % i == 0) {
+                  return cislo+" is not prime";
+                }
+                i++;
+              }
+              return cislo+" is Prime";
+            }
+            document.getElementById("dvanacty").innerHTML = prvocislo(cislo);
           </script>
         </div>
       </div>
