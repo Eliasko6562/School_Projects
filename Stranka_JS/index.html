@@ -409,7 +409,18 @@
           <div class="bg-info p-3" id="trinacty">
           </div>
           <script>
-            <!-- Zadejte JS kód -->
+            function datum() {
+              let dnes = new Date();
+              let den = dnes.getDate();
+              let mesic = dnes.getMonth() + 1;
+              let rok = dnes.getFullYear();
+              let hodiny = dnes.getHours();
+              let minuty = dnes.getMinutes();
+              let sekundy = dnes.getSeconds();
+              let cas = `Aktualni datum je: ${den}.${mesic}.${rok} ${hodiny}:${minuty}:${sekundy}`;
+              return cas;
+            }
+            document.getElementById("trinacty").innerHTML = datum();
           </script>
         </div>
         <div class="col-sm-6 bg-secondary text-light p-5">
@@ -423,13 +434,22 @@
             <img src="img/hrad.webp" class="img-fluid" alt="foto" id="foto">            
           </div>
           <script>
-            <!-- Zadejte JS kód -->
+            let fotky = ["./img/hrad.webp", "./img/praha.jpg", "./img/staromak.jpg", "./img/vltava.jpg"];
+            let i = 0;
+            function zmena() {
+              document.getElementById("foto").src = fotky[i];
+              i++;
+              if (i == fotky.length) {
+                i = 0;
+              }
+            }
+            setInterval(zmena, 3000);
           </script>
         </div>
       </div>      
     </main>
-    <footer class="text-center mt-5">
-      Jméno Příjmení, třída IT2
+    <footer class="text-center m-3">
+      Eliáš Constantine IT2
     </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
