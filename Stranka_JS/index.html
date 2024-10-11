@@ -361,7 +361,7 @@
             function prestupneRoky(rok1, rok2) {
               let roky = [];
               for (let i = rok1; i <= rok2; i++) {
-                if ((i % 4 == 0 && i % 100 != 0) || i % 400 == 0) {
+                if (i % 4 == 0 && (i % 100 != 0 || i % 400 == 0)) {
                   roky.push(i);
                 }
               }
