@@ -359,13 +359,13 @@
           </div>
           <script>
             function prestupneRoky(rok1, rok2) {
-              let roky = [];
+              let roky = "<ul>\n";
               for (let i = rok1; i <= rok2; i++) {
-                if (i % 4 == 0 && (i % 100 != 0 || i % 400 == 0)) {
-                  roky.push(i);
+                if (i % 4 == 0 && i % 100 != 0 || i % 400 == 0) {
+                  roky += `\t<li>${i}</li>\n`;
                 }
               }
-              return roky;
+              return roky + "</ul>";
             }
             document.getElementById("jedenacty").innerHTML = prestupneRoky(2000, 2020);
 
