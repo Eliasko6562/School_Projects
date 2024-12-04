@@ -1,0 +1,10 @@
+::placeholder {
+   color: #818181a8 !important;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 25px;
+    width: 100%;
+}
