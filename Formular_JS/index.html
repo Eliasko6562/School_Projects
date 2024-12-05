@@ -24,10 +24,11 @@
                         </div>
                         <div class="mb-3 row">
                             <label for="time" class="form-label">Čas (s)</label>
-                            <input type="number" class="form-control" id="time" name="time"  value="" placeholder="--" required>
+                            <input type="number" class="form-control" id="time" name="time" min="1" placeholder="--" required>
+                            <error id="errorTime" class=""></error>
                         </div>
                         <div class="mb-3 text-center">
-                            <button type="submit" class="btn btn-warning text-secondary" id="calculate">Vypočítat</button>
+                            <button type="button" class="btn btn-warning text-secondary" id="calculate">Vypočítat</button>
                         </div>
                     </form>
                 </div>
@@ -36,7 +37,7 @@
                         <h3 class="text-center">Výsledek</h3>
                         <div class="mb-3 row">
                             <label for="result" class="form-label">Rychlost (m/s)</label>
-                            <input type="number" class="form-control" id="result" name="result" readonly>
+                            <p id="result" class="form-control p-3"></p>
                         </div>
                     </div>
                 </div>
