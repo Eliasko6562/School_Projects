@@ -2,9 +2,10 @@ const continent = document.getElementById('continent');
 const modal = new bootstrap.Modal(document.getElementById('windowCountry'));
 const modalHeader = document.getElementById("modal-header-content");
 const modalBody = document.getElementById("modal-body-content");
+const modalFooter = document.getElementById("modal-footer-content");
 
 function formatNum(num){
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "&nbsp;");
 }
 
 function displayValue(value, formatter = v => v) {
@@ -73,8 +74,12 @@ async function getData(region) {
                   <li> <strong>Timezone${hasMore(country.timezones)}:</strong> ${displayValue(country.timezones)}
                 </ul>
               `;
-            })
-            .catch(error => {
+                modalFooter.innerHTML = `
+                  <img src="${country.flags.png}" alt="Vlajka" style="height: 60px;">
+                  <button type="button" class="btn btn-danger ms-5" data-bs-dismiss="modal">Close</button>
+                `;
+              })
+              .catch(error => {
               console.log(`Nastala chyba: ${error}`);
             });
         });

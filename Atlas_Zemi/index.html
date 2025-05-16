@@ -19,7 +19,7 @@
         />
     </head>
  
-    <body>
+    <body class="bg-secondary">
 
         <header class="bg-dark p-3">
             <h1 class="display-5 text-warning text-center">Country Atlas</h1>
@@ -36,7 +36,7 @@
             </select>
         </div>
 
-        <main class="container-grid bg-secondary p-3">
+        <main class="container-grid p-3">
             <div class="row gy-3" id="listCountries">
             <!-- place countries here -->
             </div>
@@ -52,14 +52,13 @@
                     <!-- Modal Header -->
                     <div class="modal-header bg-dark text-white">
                         <h2 class="modal-title mt-2" id="modal-header-content"></h2>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <!-- Modal body -->
                     <div class="modal-body bg-secondary" id="modal-body-content">
                     </div>
                     <!-- Modal footer -->
-                    <div class="modal-footer bg-dark">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <div class="modal-footer bg-dark justify-content-start" id="modal-footer-content">
+                        
                     </div>
                 </div>
             </div>
