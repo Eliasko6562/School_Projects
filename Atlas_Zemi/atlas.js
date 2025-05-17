@@ -19,6 +19,17 @@ function hasMore(value) {
   return Object.values(value).length > 1 ? 's' : '';
 }
 
+ document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.getElementById('mapsRedirectBtn');
+  btn.addEventListener('click', function() {
+    // Assumes you set country name in modal-header-content
+    const country = document.getElementById('modal-header-content').textContent.trim();
+    if (country) {
+        window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(country)}`, '_blank');
+    }
+  });
+});
+
 async function getData(region) {
     const url = `https://restcountries.com/v3.1/region/${region}`;
     try {
@@ -74,10 +85,13 @@ async function getData(region) {
                   <li> <strong>Timezone${hasMore(country.timezones)}:</strong> ${displayValue(country.timezones)}
                 </ul>
               `;
-                modalFooter.innerHTML = `
-                  <img src="${country.flags.png}" alt="Vlajka" style="height: 60px;">
-                  <button type="button" class="btn btn-danger ms-5" data-bs-dismiss="modal">Close</button>
-                `;
+              modalFooter.innerHTML = `
+                <div class="d-flex align-items-center w-100">
+                  <img src="${country.flags.png}" alt="Vlajka" class="me-3" style="height: 60px;">
+                  <div class="flex-grow-1"></div>
+                  <button type="button" class="btn btn-danger ms-auto" data-bs-dismiss="modal">Close</button>
+                </div>
+              `;
               })
               .catch(error => {
               console.log(`Nastala chyba: ${error}`);
