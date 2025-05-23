@@ -287,8 +287,8 @@ submit.addEventListener("click", async (event) => {
     const places = await getGPS(locality.value);
     console.log(places);
     setLocalities(places);
-    const position = [places[0].latitude, places[0].longitude];
-    const forecast = createForecast(...position);
+    const position = [places[0].lat, places[0].lon];
+    const forecast = await createForecast(...position);
     console.log(forecast);
     currentDay.innerHTML = currentDayBlock(forecast.current_weather);
     nextDays.innerHTML = nextDaysBlock(forecast.daily);
