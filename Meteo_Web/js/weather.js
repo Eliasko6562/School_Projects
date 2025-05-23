@@ -150,6 +150,7 @@ const weathercode = {
   },
 };
 
+// Gets the direction of the wind
 function getWindDirection(wdir) {
   if ((wdir >= 0 && wdir < 23) || wdir >= 337) return "severní";
   if (wdir >= 23 && wdir < 68) return "severovýchodní";
@@ -161,12 +162,14 @@ function getWindDirection(wdir) {
   return "severozápadní";
 }
 
+// gets the date from string splits it into an array
 function getDate(date) {
   date = date.split("-");
   d = new Date(date[0], date[1] - 1, date[2]);
   return d;
 }
 
+// Gets the day in Czech
 function getCzechDay(date) {
   const dny = [
     "neděle",
@@ -180,6 +183,7 @@ function getCzechDay(date) {
   return dny[date.getDay()];
 }
 
+// Shows local areas
 function setLocalities(data) {
   localities.innerHTML = "";
   data.forEach((locality) => {
@@ -190,6 +194,7 @@ function setLocalities(data) {
   });
 }
 
+// Shows the weather forecast of the current day
 function currentDayBlock(data) {
   let currentTime = data.time.split("T");
   let currentDate = getDate(currentTime[0]);
@@ -214,6 +219,7 @@ function currentDayBlock(data) {
   return output;
 }
 
+// Shows the weather forecast of the next days
 function nextDaysBlock(data) {
   let days = "";
   data.time.forEach((day, idx) => {
@@ -276,7 +282,31 @@ async function getLocality(latitude, longitude) {
 }
 
 // chybějící kód
+submit.addEventListener("click", async (event) => {
+  try { 
+    const places = await getGPS(locality.value);
+    console.log(places);
+    setLocalities(places);
+    const position = [places[0].latitude, places[0].longitude];
+    const forecast = createForecast(...position);
+    console.log(forecast);
+    currentDay.innerHTML = currentDayBlock(forecast.current_weather);
+    nextDays.innerHTML = nextDaysBlock(forecast.daily);
+  } catch (error) {
+    console.error(error);
+  }
 
+/*
+getLocality();
+createForecast(position.coords.latitude, position.coords.longitude);
+getWindDirection(0);
+getDate();
+getCzechDay(new Date());
+setLocalities(data);
+currentDayBlock();
+nextDaysBlock();
+*/
+});
 
 localities.addEventListener("change", (event) => {
   locality.value = event.target.value;

@@ -1,2 +1,0 @@
-# meteoweb
-REST API application
