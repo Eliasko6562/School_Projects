@@ -1,12 +1,12 @@
 /* https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/ */
 /* https://github.com/toddmotto/public-apis */
-const url =
-  "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&relativehumidity_2m=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m,surface_pressure";
+const url = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true&relativehumidity_2m=true&hourly=temperature_2m,relativehumidity_2m,windspeed_10m,surface_pressure";
 
 let marker = null;
 let map = null;
 let chartTP, chartP;
 
+// Object s objekty vsech moznosti pocasi
 const weathercode = {
   0: {
     en: "Clear sky",
