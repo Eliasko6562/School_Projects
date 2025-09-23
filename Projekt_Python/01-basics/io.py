@@ -98,3 +98,11 @@ využijete na maximum možností výstupů do konzole. Může to být vtipný do
 z matematiky...), průvodce fiktivní instalací atd. Fantazii se meze nekladou a vtipnější vyhrává :-)
 Aplikaci uložte do samostatného souboru myapp.py.     
 """
+
+# Příklad jednoduché aplikace - Mad Libs
+print("Davejte jen nepravdivé údaje, ať je to zábavnější :)\n")
+jmeno = input("Zadejte jméno: ")
+prijmeni = input("Zadejte příjmení: ")
+mesto = input("Zadejte město: ")
+print(f"Jednou se {jmeno} {prijmeni} rozhodl(a) navštívit {mesto}.")
+print(f"V {mesto} potkal(a) ___, který mu/jí nabídl tři ___.")
