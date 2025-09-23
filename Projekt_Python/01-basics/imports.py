@@ -61,7 +61,7 @@ pip install -r requirements.txt
 # Poté tento balíček importujte
 import camelcase
 c = camelcase.CamelCase() # Konstruktor třídy CamelCase() vytvoří objekt v proměnné c
-txt = 'ahoj světáku'
+txt = 'ahoj světáku\n'
 print(c.hump(txt)) # Metoda hump() přeformátuje předaný řetězec podle zásad camel syntaxe (velká první písmena slov)
 
 """
@@ -71,22 +71,24 @@ Použijte vhodné moduly v Pythonu (včetně jejich případné instalace) k tom
 1) vypsali aktuální datum a čas
 2) vypsali datum velikonoční neděle (easter) v následujících 5 letech
 3) vypsali nejbližší rok, v němž bude Štědrý den v neděli
-
 K řešení prvního úkolu je možné doporučit importovat interní modul datetime
 Řešení dalších dvou úkolů můžete odvodit z příkladů v dokumentaci k externímu modulu dateutil - viz https://pypi.org/project/python-dateutil/
 """
 
 from datetime import datetime as dt
+
 now = dt.now()
-print(now)
+print(f"Current date and time: {now.strftime('%d.%m.%Y %H:%M:%S')}\n")
 
 from dateutil.easter import *
 
-print("Easter for the years 2025-2030")
+print("Easter for the years 2025-2030:")
 for i in range(2025, 2030 + 1):
-    print(easter(i,3))
+    easter_date = easter(i, 3)
+    print(f"{i}: {easter_date.day}.{easter_date.month}")
+print()
 
 from dateutil.rrule import *
 
 year = rrule(YEARLY,dtstart=now,bymonth=12,bymonthday=24,byweekday=SU)[0].year
-print(f"The next Christmas Eve on Sunday will be: {year}")
+print(f"The next Christmas Eve on Sunday will be the year {year}\n")
