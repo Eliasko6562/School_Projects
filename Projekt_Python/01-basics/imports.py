@@ -75,3 +75,18 @@ Použijte vhodné moduly v Pythonu (včetně jejich případné instalace) k tom
 K řešení prvního úkolu je možné doporučit importovat interní modul datetime
 Řešení dalších dvou úkolů můžete odvodit z příkladů v dokumentaci k externímu modulu dateutil - viz https://pypi.org/project/python-dateutil/
 """
+
+from datetime import datetime as dt
+now = dt.now()
+print(now)
+
+from dateutil.easter import *
+
+print("Easter for the years 2025-2030")
+for i in range(2025, 2030 + 1):
+    print(easter(i,3))
+
+from dateutil.rrule import *
+
+year = rrule(YEARLY,dtstart=now,bymonth=12,bymonthday=24,byweekday=SU)[0].year
+print(f"The next Christmas Eve on Sunday will be: {year}")
