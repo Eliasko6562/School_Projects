@@ -8,13 +8,18 @@ Pro přiřazení hodnoty proměnné se používá znak rovnítko ("=").
 # Proměnné v Pythonu - primitivní datové typy
 # Je zvykem používat podtržítko u víceslovných názvů proměnných.
 students_count = 1000
+print(type(students_count))
+print(id(students_count))
 rating = 4.99
+print(type(rating))
+print(id(rating))
 # Hodnota může být přiřazena i více proměnným najednou:
 x = y = z = 0
 
 # Boolean hodnota musí začínat velkým písmenem
 is_published = False
-
+print(type(is_published))
+print(id(is_published))
 # Python obsahuje i speciální literál None - nulovou hodnotu
 iq = None
 # print('Jeho IQ = ', iq)
@@ -29,8 +34,8 @@ Některé objekty mohou mít explicitně přiřazené jméno, obecně označovan
 
 '''Úkol A'''
 #? Najděte na Internetu, jakými funkcemi lze v Pythonu zjistit
-#? a) typ objektu
-#? b) identitu objektu (jeho adresu v paměti)
+#? a) typ objektu - type
+#? b) identitu objektu (jeho adresu v paměti) - id
 #? Ukažte to na příkladech proměnných students_count, rating, is_published a vypište výstupy do konzole
 
 # Numerické operátory
@@ -66,12 +71,27 @@ hexadecimal = 0x12c #Hexadecimal Literal
 
 '''Úkol B'''
 #? Vypište do poznámky všechny bitové operátory, které nabízí Python
+'''
+x << y
+x >> y
+x & y
+x | y
+~ x
+x ^ y
+'''
 #? Do proměnné myself_binary uložte binární číslo vytvořené na základě osmi prvních znaků z vašeho jména a příjmení (souhláska = 1, samohláska 0)
 #? Příklad - HildaDok: 10110101
+#EliaCons
+myself_binary = 0b01001011
 #? Vypište toto binární číslo v desítkové soustavě
+print(myself_binary)
 #? Pro toto binární číslo proveďte nejprve bitový posun o 2 bity vpravo, poté vypište výsledek v desítkové soustavě
+myself_binary >>= 2
+print(myself_binary)
 #? Proveďte bitový součin hexadecimálního čísla "1A" a vašeho binárního čísla a opět vypište v desítkové soustavě
+print(f'Součin čísla 1A a {myself_binary} je {myself_binary}')
 #? Výsledek zobrazte jako formátovaný řetězec - např. "Binární součin čísla 0b11010 a 0b10110101 je 0b10000"
+print(f'Binární součin čísla 0b11010 a 0b10110101 je {bin(0b11010 & 0b10110101)}')
 
 
 '''Python plně podporuje operace v plovoucí řádové čárce (tj. desetinná čísla). 

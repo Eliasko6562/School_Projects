@@ -78,48 +78,48 @@ Při neuvedení druhého indexu se použije délka řetězce (čili konec řetě
 '''
 
 # Vypíše vše od 2. znaku
-# print(course_name[1:])
+print(course_name[1:])
 # Vypíše vše od 2. znaku do předposledního
-# print(course_name[1:-1])
+print(course_name[1:-1])
 # Vypíše 3 znaky od začátku
-# print(course_name[:3])
+print(course_name[:3])
 
 '''
 Další vlastností slice indexů je jejich automatické "zarovnávání" na rozměr řetězce. 
 Je-li totiž index použitý ve slice konstrukci příliš velký, je nahrazen délkou řetězce. 
 '''
-# print(course_name[1:50])
+print(course_name[1:50])
 # Pokud je dolní index větší než horní, je výsledkem prázdný řetězec:
-# print(course_name[2:1])
+print(course_name[2:1])
 
 first_name = "Donald  "
 second_name = "  Trump"
 # Spojování řetězců
-# print(first_name + second_name)
+print(first_name + second_name)
 
 # Opakování řetězců
-# print(first_name + second_name * 3)
+#print(first_name + second_name * 3)
 
 '''
 Řetězce v jazyce Python nelze měnit. Pokusíme-li se změnit určitou pozici v řetězci, dojde k chybě.
 '''
-# first_name[0] = 'R'
+#first_name[0] = 'R'
 '''
 Proto jedinou cestou, jak vytvářet nové řetězce, je jejich kombinování, které je velice jednoduché a přitom efektivní:
 '''
-# print('R' + first_name[1:])
+print('R' + first_name[1:])
 
 # Formátovaný výstup, použití řetězcových funkcí
-# print(f"{first_name.upper().rstrip()} {second_name.lower().lstrip()} {5 * 4} {len(message)}")
+print(f"{first_name.upper().rstrip()} {second_name.lower().lstrip()} {5 * 4} {len(message)}")
 
 # Nalezení pozice podřetězce v řetězci
-# print(first_name.find("na"))
+print(first_name.find("na"))
 
 # Nahrazení podřetězce v řetězci
-# print(first_name.upper().replace("D", "*"))
+print(first_name.upper().replace("D", "*"))
 
 # Zjištění výskytu podřetězce
-# print("na" not in first_name)
+print("na" not in first_name)
 
 '''
 Python umí pracovat s Unicode řetězci úplně stejným způsobem jako s obyčejnými řetězci. 
@@ -128,20 +128,20 @@ Unicode řetězce můžeme zapisovat přímo ve zdrojovém kódu programu.
 Pouze před samotný řetězec vložíme prefix u (podobně jako u raw řetězců prefix r):
 '''
 
-# print(u'\xe4\xf6\xfc')
+print(u'\xe4\xf6\xfc')
 
 '''Pro konverzi znaků můžeme použít interní funkci encode(), 
 která umožňuje přístup ke všem registrovaným kodekům (např. Latin-1, ASCII, UTF-8 nebo UTF-16). '''
 
-# print(u'äöü'.encode('utf-8'))
-# print(u'čřž'.encode('latin2'))
+print(u'äöü'.encode('utf-8'))
+print(u'čřž'.encode('latin2'))
 
 '''Opačnou konverzi umožňuje funkce decode(), které lze opět předat jediný argument - jméno kódování, 
 ve kterém je původní osmibitový řetězec.
 '''
 
-# print(b'\xc3\xa4\xc3\xb6\xc3\xbc'.decode('utf-8'))
-# print(b'\xe8\xf8\xbe'.decode('windows-1250'))
+print(b'\xc3\xa4\xc3\xb6\xc3\xbc'.decode('utf-8'))
+print(b'\xe8\xf8\xbe'.decode('windows-1250'))
 
 ''' 
 Programátorská výzva:
