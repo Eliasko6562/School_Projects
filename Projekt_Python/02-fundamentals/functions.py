@@ -1,11 +1,9 @@
 # Funkce v Pythonu
 # Funkce provádějící kód
 
-
 def greet(first_name, last_name):
     print(f"Ahoj {first_name} {last_name}")
     print("To je pozdrav z funkce")
-
 
 greet("Vladimir", "Putin")
 
@@ -15,11 +13,9 @@ def getGreeting(name):
 
 print(getGreeting("Milos"))
 
-
 # Klíčové argumenty, argument s výchozí hodnotou
 def increment(number, by=1):
     return number + by
-
 
 print(increment(10, by=6))
 
@@ -30,7 +26,6 @@ def multiply(*numbers):
     for number in numbers:
         total *= number
     return total
-
 
 print(multiply(2, 3, 4, 5))
 
@@ -47,7 +42,6 @@ message = "Globální proměnná"
 def send_message():
     #global message
     message = "Lokální proměnná"
-
 
 send_message()
 print(message)
