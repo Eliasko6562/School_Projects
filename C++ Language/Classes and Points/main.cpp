@@ -1,11 +1,10 @@
 #include <iostream>
+#include "point.h"
+#include <iomanip>
+
 using std::cin;
 using std::cout;
 using std::endl;
-
-#include "point.h"
-
-#include <iomanip>
 using std::setprecision;
 
 int main() {
