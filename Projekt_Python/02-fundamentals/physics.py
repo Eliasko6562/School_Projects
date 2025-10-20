@@ -6,10 +6,12 @@ V Pythonu jsou konstanty obvykle deklarovány a přiřazovány v modulu, který 
 Konstanty jsou pojmenovány velkými písmeny a jednotlivá slova jsou oddělována podtržítky.
 '''
 
+'''
 EARTH_GRAVITY = 9.8 #? normální pozemské tíhové zrychlení
 MOON_GRAVITY = 1.62 #? měsíční gravitace
 SPEED_OF_LIGHT = 299792 #? rychlost světla ve vakuu
 SPEED_OF_SOUND = 343 #? rychlost zvuku při teplotě 20 °C v suchém vzduchu
+'''
 
 ''' 
 Úkol:
@@ -19,6 +21,8 @@ Samozřejmě můžete své řešení rozšířit i o jiné fyzikální konstanty
 3. Vytvořte z tohoto souboru samostatný modul v Pythonu podle návodu, který si sami najdete na internetu.      
 4. Vytvořte vlastní aplikaci myapp.py, do níž tento modul importujte. Demonstrujte v ní na jednoduchých příkladech využití vámi
 připravených funkcí.  
+'''
+
 '''
 def lightning_thunder_distance():
     """
@@ -48,7 +52,10 @@ def light_travel_time():
     distance = float(input("Zadej vzdalenost (km), ktere svetlo ma urazit: "))
     time = distance / SPEED_OF_LIGHT
     print(f"Cas potrebny pro svetlo k urazeni {distance} km: {time:.6f} sekund")
+'''
 
-lightning_thunder_distance()
-free_fall_time()
-light_travel_time()
+import myapp
+
+myapp.lightning_thunder_distance()
+myapp.free_fall_time()
+myapp.light_travel_time()
