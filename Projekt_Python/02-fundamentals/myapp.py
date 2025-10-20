@@ -12,7 +12,7 @@ def lightning_thunder_distance():
     """
     time = float(input("Zadej cas (s) mezi zableskem a hromem: "))
     distance_sound = SPEED_OF_SOUND * time
-    print(f"Vzdálenost blesku přibližně: {distance_sound} metrů")
+    print(f"Vzdálenost blesku přibližně: {distance_sound:.2f} metrů")
 
 def free_fall_time():
     """
@@ -32,4 +32,4 @@ def light_travel_time():
     """
     distance = float(input("Zadej vzdalenost (km), ktere svetlo ma urazit: "))
     time = distance / SPEED_OF_LIGHT
-    print(f"Cas potrebny pro svetlo k urazeni {distance:.0f} km: {time:.2f} s (vteriny)")
+    print(f"Cas potrebny pro svetlo k urazeni {distance:,.0f} km: {time:,.2f} s (vteriny)".format(distance).replace(',', ' '))
