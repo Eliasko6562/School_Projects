@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    cpus: "2.0"
+    deploy:
+      resources:
+        limits:
+          cpus: "2.0"
+    # fallback for engines that accept cpu_period/cpu_quota
+    ports:
+      - "5000:5000"
