@@ -6,12 +6,6 @@ using std::endl;
 
 int main() {
     circle c(10);
-    
-    cout << c.getRadius() << endl;
-    cout << c.circ() << endl;
-    cout << c.area() << endl;
-    cout << c.setRadius(20) << endl;
-    cout << c.getRadius() << endl;
-    cout << c.circ() << endl;
-    cout << c.area() << endl;
+
+    c.circleInfo();
 }

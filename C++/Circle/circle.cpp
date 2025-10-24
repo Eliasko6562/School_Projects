@@ -3,7 +3,19 @@
 #include <cmath>
 using std::pow;
 
-circle::circle(int radius): radius(radius) {}
+#include <iostream>
+using std::cout;
+using std::endl;
+
+circle::circle(): radius(1) {}
+
+circle::circle(int radius): radius(1) {
+    setRadius(radius);
+}
+
+circle::circle(const circle &source): radius(source.getRadius()) {}
+
+circle::~circle() {}
 
 float circle::circ() const {
     return 2 * M_PI * radius;
@@ -23,4 +35,10 @@ bool circle::setRadius(int r) {
         return true;
     }
     return false;
+}
+
+void circle::circleInfo() const {
+    cout << "Radius: " << getRadius() << endl;
+    cout << "Circumference: " << circ() << endl;
+    cout << "Area: " << area() << endl;
 }
