@@ -3,6 +3,11 @@ import random as rand
 from tkinter import simpledialog  as sd
 from tkinter import colorchooser as cc
 
+try:
+    from files.happiness.data_loader import load_data as ld
+except:
+    pass
+
 class App: 
     def __init__(self):
         self.root = tk.Tk()

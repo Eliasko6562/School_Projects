@@ -285,9 +285,23 @@ print(f'\tSbalení seznamů do proměnné values: {values}\n')
 from random import randint
 
 print(f'\n*************************************\nCvičení 2\n*************************************')
+hundreds = [number for number in range(1, 2001) if number % 200 == 0]
+print(hundreds)
 
+ascii = [chr(randint(65, 90)) for _ in range(50)]
+print(ascii)
 
+hundreds = hundreds[3:-3]
+print(hundreds)
 
+unique = [char for char in ascii if ascii.count(char) == 1]
+print(unique)
+
+ascii = ascii[:len(hundreds)]
+print(ascii)
+
+combine = list(zip(hundreds, ascii))
+print(combine)
 # ??? 3. cvičení ???
 # a) Přidejte do listu persons ještě n-tice (tuples) dalších 2 žen a 2 mužů.
 # b) Použijte seznam (list) persons a do proměnné women z něj pomocí lambda výrazu i comprehensions vyhledejte všechny ženy.
