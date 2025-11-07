@@ -5,6 +5,7 @@ from tkinter import colorchooser as cc
 
 try:
     from files.happiness.data_loader import load_data as ld
+    print(ld())
 except:
     pass
 
