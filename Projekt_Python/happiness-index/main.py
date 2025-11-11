@@ -1,5 +1,5 @@
 from happiness.data_loader import load_data
-from happiness.filters import find_country, filter_by_region, filter_by_score_range, to_float
+from happiness.filters import find_country, filter_by_region, filter_by_score_range, to_float, filter_by_life_expectancy
 
 def main():
     try:
@@ -20,6 +20,10 @@ def main():
         print("\n🔹 Filtrování podle skóre (7.0 – 8.0):")
         filtered = filter_by_score_range(data, 7.0, 8.0)
         print(f"Nalezeno {len(filtered)} zemí s hodnotou štěstí v rozmezí 7.0–8.0.")
+        
+        print("\n🔹 Filtrování podle očekávané délky života (70.0 – 80.0):")
+        life_expectancy = filter_by_life_expectancy(data, 70.0, 80.0)
+        print(f"Nalezeno {len(life_expectancy)} zemí s očekávanou délkou života v rozmezí 70.0–80.0.")
     except FileNotFoundError:
         print("Chyba: Soubor nebyl nalezen.")
 
