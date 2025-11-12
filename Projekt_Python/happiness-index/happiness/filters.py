@@ -59,7 +59,7 @@ def filter_by_score_range(data, min_score, max_score, score_key="Happiness score
     Returns:
         list: Seznam záznamů s hodnotou skóre v zadaném rozsahu.
     """
-    return [r for r in data if (v := to_float(r[score_key])) and min_score <= v <= max_score]
+    return [r for r in data if (v := to_float(r.get(score_key))) is not None and min_score <= v <= max_score]
 
 def filter_by_life_expectancy(data, min_expectancy, max_expectancy, expectancy_key="Life expectancy"):
     """
@@ -71,4 +71,5 @@ def filter_by_life_expectancy(data, min_expectancy, max_expectancy, expectancy_k
     Returns:
         list: Seznam záznamů s hodnotou očekávané délky života v zadaném rozsahu.
     """
-    return [r for r in data if (v := to_float(r[expectancy_key])) and min_expectancy <= v <= max_expectancy]
+    # Použít to_float pro bezpečné převádění hodnot na float před porovnáním
+    return [r for r in data if (v := to_float(r.get(expectancy_key))) is not None and min_expectancy <= v <= max_expectancy]

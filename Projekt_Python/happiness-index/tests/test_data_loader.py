@@ -10,3 +10,5 @@ def test_load_data(data):
     assert "Country" in data[0]
     # Ověření, že klíč "Happiness score" je přítomen
     assert "Happiness score" in data[0]
+    # Ověření, že klíč "Life expectancy" je přítomen
+    assert "Life expectancy" in data[0]

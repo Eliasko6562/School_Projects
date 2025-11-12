@@ -25,5 +25,14 @@ def load_data(csv_path="world_happiness_2024.csv", delimiter=';'):
         # Vytvoření DictReader pro čtení CSV jako slovníků
         reader = csv.DictReader(f, delimiter=delimiter)
         # Načtení všech řádků do seznamu a uložení do proměnné data
-        data = [row for row in reader]
+        data = []
+        for row in reader:
+            # Normalizovat názvy sloupců tak, aby odpovídaly testům a filtrům
+            # Některé soubory používají 'Ladder score' místo 'Happiness score'
+            if "Ladder score" in row and "Happiness score" not in row:
+                row["Happiness score"] = row.pop("Ladder score")
+            # Některé soubory používají 'Healthy life expectancy' místo 'Life expectancy'
+            if "Healthy life expectancy" in row and "Life expectancy" not in row:
+                row["Life expectancy"] = row.pop("Healthy life expectancy")
+            data.append(row)
     return data
