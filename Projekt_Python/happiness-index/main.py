@@ -1,5 +1,23 @@
+import tkinter as tk
 from happiness.data_loader import load_data
 from happiness.filters import find_country, filter_by_region, filter_by_score_range, to_float, filter_by_life_expectancy
+from happiness.ui_menu import attach_happiness_menu
+
+class App:
+    def __init__(self):
+        self.root = tk.Tk()
+        self.root.title("Index štěstí")
+        self.root.geometry("800x600")
+        self.root.resizable(False, False)
+        self.menubar = tk.Menu(self.root)
+        self.root.config(menu=self.menubar)
+        
+        if attach_happiness_menu:
+            attach_happiness_menu(self.root, self.menubar)
+            
+    def run(self):
+        self.root.mainloop()
+        
 
 def main():
     try:
@@ -29,4 +47,5 @@ def main():
 
  
 if __name__ == "__main__":
-    main()
+    App().run()
+    # main()

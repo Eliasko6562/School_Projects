@@ -7,6 +7,9 @@ from .filters import find_country, filter_by_region, filter_by_score_range
 
 class HappinessApp:
     def __init__(self, root):
+        '''
+        Konstruktor třídy HappinessApp.  
+        '''
         self.root = root
         self.data = []
         self.filtered = []
@@ -67,7 +70,7 @@ class HappinessApp:
         if not result:
             messagebox.showinfo("Výsledek", "Žádná země v daném regionu.")
         else:
-            txt = "\n".join(f"{r['Country name']} — {r['Ladder score']}" for r in result)
+            txt = "\n".join(f"{r['Country']} — {r['Happiness score']}" for r in result)
             messagebox.showinfo("Výsledek", txt)
             self.filtered = result
 
