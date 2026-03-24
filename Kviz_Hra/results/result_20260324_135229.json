@@ -1,0 +1,48 @@
+{
+  "question_id": "q001",
+  "start_time": 1774356736.0031807,
+  "elapsed_time": 13.028678178787231,
+  "remaining_time": 586.9713218212128,
+  "current_points": 117,
+  "revealed_cells": [
+    5,
+    9,
+    12
+  ],
+  "letter_hints_used": 0,
+  "attempts": [
+    {
+      "timestamp": 1.7053523063659668,
+      "action_type": "cell_reveal",
+      "points_before": 120,
+      "points_after": 120,
+      "cost": 0,
+      "details": {
+        "cell_index": 12
+      }
+    },
+    {
+      "timestamp": 3.097501277923584,
+      "action_type": "cell_reveal",
+      "points_before": 120,
+      "points_after": 119,
+      "cost": -1,
+      "details": {
+        "cell_index": 9
+      }
+    },
+    {
+      "timestamp": 4.532135248184204,
+      "action_type": "cell_reveal",
+      "points_before": 119,
+      "points_after": 117,
+      "cost": -2,
+      "details": {
+        "cell_index": 5
+      }
+    }
+  ],
+  "game_over": true,
+  "game_end_reason": "user_quit",
+  "correct_answer_given": false
+}

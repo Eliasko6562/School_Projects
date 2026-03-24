@@ -1,0 +1,78 @@
+{
+  "question_id": "q003",
+  "start_time": 1774355574.6249483,
+  "elapsed_time": 41.73986864089966,
+  "remaining_time": 558.2601313591003,
+  "current_points": 112,
+  "revealed_cells": [
+    5,
+    10
+  ],
+  "letter_hints_used": 3,
+  "attempts": [
+    {
+      "timestamp": 8.809096813201904,
+      "action_type": "cell_reveal",
+      "points_before": 120,
+      "points_after": 120,
+      "cost": 0,
+      "details": {
+        "cell_index": 5
+      }
+    },
+    {
+      "timestamp": 17.882468700408936,
+      "action_type": "cell_reveal",
+      "points_before": 120,
+      "points_after": 119,
+      "cost": -1,
+      "details": {
+        "cell_index": 10
+      }
+    },
+    {
+      "timestamp": 20.198485851287842,
+      "action_type": "letter_hint",
+      "points_before": 119,
+      "points_after": 117,
+      "cost": -2,
+      "details": {
+        "hint_number": 1
+      }
+    },
+    {
+      "timestamp": 22.174684762954712,
+      "action_type": "letter_hint",
+      "points_before": 117,
+      "points_after": 115,
+      "cost": -2,
+      "details": {
+        "hint_number": 2
+      }
+    },
+    {
+      "timestamp": 22.8002188205719,
+      "action_type": "letter_hint",
+      "points_before": 115,
+      "points_after": 112,
+      "cost": -3,
+      "details": {
+        "hint_number": 3
+      }
+    },
+    {
+      "timestamp": 30.19884181022644,
+      "action_type": "answer_submission",
+      "points_before": 112,
+      "points_after": 112,
+      "cost": 0,
+      "details": {
+        "answer": "Steve Jobs",
+        "correct": true
+      }
+    }
+  ],
+  "game_over": true,
+  "game_end_reason": "user_quit",
+  "correct_answer_given": true
+}

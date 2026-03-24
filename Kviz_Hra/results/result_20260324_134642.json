@@ -1,0 +1,48 @@
+{
+  "question_id": "q001",
+  "start_time": 1774356381.886235,
+  "elapsed_time": 20.93677306175232,
+  "remaining_time": 579.0632269382477,
+  "current_points": 119,
+  "revealed_cells": [
+    5,
+    9
+  ],
+  "letter_hints_used": 0,
+  "attempts": [
+    {
+      "timestamp": 9.931236028671265,
+      "action_type": "cell_reveal",
+      "points_before": 120,
+      "points_after": 120,
+      "cost": 0,
+      "details": {
+        "cell_index": 9
+      }
+    },
+    {
+      "timestamp": 12.381756067276001,
+      "action_type": "cell_reveal",
+      "points_before": 120,
+      "points_after": 119,
+      "cost": -1,
+      "details": {
+        "cell_index": 5
+      }
+    },
+    {
+      "timestamp": 13.881221055984497,
+      "action_type": "answer_submission",
+      "points_before": 119,
+      "points_after": 119,
+      "cost": 0,
+      "details": {
+        "answer": "Alan turing",
+        "correct": true
+      }
+    }
+  ],
+  "game_over": true,
+  "game_end_reason": "completed",
+  "correct_answer_given": true
+}

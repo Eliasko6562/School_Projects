@@ -1,0 +1,47 @@
+[
+  {
+    "id": "q001",
+    "title": "Zakladatel moderní informatiky",
+    "image": "Alan_turing.jpg",
+    "answer": "Alan Turing",
+    "category": "IT_History",
+    "difficulty": 3,
+    "description": "Britský matematik, logik a průkopník teoretické informatiky a umělé inteligence"
+  },
+  {
+    "id": "q002",
+    "title": "Vynálezce www",
+    "image": "Tim-Berners-Lee.jpg",
+    "answer": "Tim Berners-Lee",
+    "category": "IT_History",
+    "difficulty": 2,
+    "description": "Britský vědecký pracovník, který vymyslel World Wide Web"
+  },
+  {
+    "id": "q003",
+    "title": "Zakladatel společnosti Apple",
+    "image": "Steve_Jobs.jpg",
+    "answer": "Steve Jobs",
+    "category": "Tech_Leaders",
+    "difficulty": 1,
+    "description": "Americký podnikatel a vynálezce, zakladatel Apple Computer"
+  },
+  {
+    "id": "q004",
+    "title": "Zakladatel Microsoftu",
+    "image": "Bill_Gates.jpg",
+    "answer": "Bill Gates",
+    "category": "Tech_Leaders",
+    "difficulty": 1,
+    "description": "Americký programátor a podnikatel, zakladatel Microsoft"
+  },
+  {
+    "id": "q005",
+    "title": "Tvůrce Linuxu",
+    "image": "linus_torvalds.jpg",
+    "answer": "Linus Torvalds",
+    "category": "Open_Source",
+    "difficulty": 2,
+    "description": "Americký-finský softwarový inženýr, tvůrce jádra Linux"
+  }
+]

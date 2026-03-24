@@ -1,0 +1,26 @@
+{
+  "question_id": "q001",
+  "start_time": 1774356026.985906,
+  "elapsed_time": 14.950354099273682,
+  "remaining_time": 585.0496459007263,
+  "current_points": 120,
+  "revealed_cells": [
+    9
+  ],
+  "letter_hints_used": 0,
+  "attempts": [
+    {
+      "timestamp": 3.1263790130615234,
+      "action_type": "cell_reveal",
+      "points_before": 120,
+      "points_after": 120,
+      "cost": 0,
+      "details": {
+        "cell_index": 9
+      }
+    }
+  ],
+  "game_over": true,
+  "game_end_reason": "user_quit",
+  "correct_answer_given": false
+}
