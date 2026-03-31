@@ -1,0 +1,191 @@
+{
+  "question_id": "q003",
+  "start_time": 1774957688.2056074,
+  "elapsed_time": 305.16153860092163,
+  "remaining_time": 294.83846139907837,
+  "current_points": 0,
+  "revealed_cells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "letter_hints_used": 0,
+  "attempts": [
+    {
+      "timestamp": 0.6310305595397949,
+      "action_type": "cell_reveal",
+      "points_before": 120,
+      "points_after": 120,
+      "cost": 0,
+      "details": {
+        "cell_index": 0
+      }
+    },
+    {
+      "timestamp": 0.8233966827392578,
+      "action_type": "cell_reveal",
+      "points_before": 120,
+      "points_after": 119,
+      "cost": -1,
+      "details": {
+        "cell_index": 4
+      }
+    },
+    {
+      "timestamp": 1.0486586093902588,
+      "action_type": "cell_reveal",
+      "points_before": 119,
+      "points_after": 117,
+      "cost": -2,
+      "details": {
+        "cell_index": 5
+      }
+    },
+    {
+      "timestamp": 1.2382454872131348,
+      "action_type": "cell_reveal",
+      "points_before": 117,
+      "points_after": 114,
+      "cost": -3,
+      "details": {
+        "cell_index": 9
+      }
+    },
+    {
+      "timestamp": 1.457566499710083,
+      "action_type": "cell_reveal",
+      "points_before": 114,
+      "points_after": 110,
+      "cost": -4,
+      "details": {
+        "cell_index": 8
+      }
+    },
+    {
+      "timestamp": 2.2063066959381104,
+      "action_type": "cell_reveal",
+      "points_before": 110,
+      "points_after": 105,
+      "cost": -5,
+      "details": {
+        "cell_index": 13
+      }
+    },
+    {
+      "timestamp": 2.3937065601348877,
+      "action_type": "cell_reveal",
+      "points_before": 105,
+      "points_after": 99,
+      "cost": -6,
+      "details": {
+        "cell_index": 12
+      }
+    },
+    {
+      "timestamp": 2.6598145961761475,
+      "action_type": "cell_reveal",
+      "points_before": 99,
+      "points_after": 92,
+      "cost": -7,
+      "details": {
+        "cell_index": 15
+      }
+    },
+    {
+      "timestamp": 3.019749641418457,
+      "action_type": "cell_reveal",
+      "points_before": 92,
+      "points_after": 84,
+      "cost": -8,
+      "details": {
+        "cell_index": 14
+      }
+    },
+    {
+      "timestamp": 3.207244634628296,
+      "action_type": "cell_reveal",
+      "points_before": 84,
+      "points_after": 75,
+      "cost": -9,
+      "details": {
+        "cell_index": 10
+      }
+    },
+    {
+      "timestamp": 3.3934085369110107,
+      "action_type": "cell_reveal",
+      "points_before": 75,
+      "points_after": 65,
+      "cost": -10,
+      "details": {
+        "cell_index": 11
+      }
+    },
+    {
+      "timestamp": 3.6138675212860107,
+      "action_type": "cell_reveal",
+      "points_before": 65,
+      "points_after": 54,
+      "cost": -11,
+      "details": {
+        "cell_index": 7
+      }
+    },
+    {
+      "timestamp": 3.8015894889831543,
+      "action_type": "cell_reveal",
+      "points_before": 54,
+      "points_after": 42,
+      "cost": -12,
+      "details": {
+        "cell_index": 6
+      }
+    },
+    {
+      "timestamp": 4.052354574203491,
+      "action_type": "cell_reveal",
+      "points_before": 42,
+      "points_after": 29,
+      "cost": -13,
+      "details": {
+        "cell_index": 3
+      }
+    },
+    {
+      "timestamp": 4.239609479904175,
+      "action_type": "cell_reveal",
+      "points_before": 29,
+      "points_after": 15,
+      "cost": -14,
+      "details": {
+        "cell_index": 2
+      }
+    },
+    {
+      "timestamp": 4.505736589431763,
+      "action_type": "cell_reveal",
+      "points_before": 15,
+      "points_after": 0,
+      "cost": -15,
+      "details": {
+        "cell_index": 1
+      }
+    }
+  ],
+  "game_over": true,
+  "game_end_reason": "user_quit",
+  "correct_answer_given": false
+}

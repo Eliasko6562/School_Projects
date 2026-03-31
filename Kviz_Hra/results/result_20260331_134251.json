@@ -1,0 +1,331 @@
+{
+  "question_id": "q002",
+  "start_time": 1774957304.3025377,
+  "elapsed_time": 67.23898243904114,
+  "remaining_time": 532.7610175609589,
+  "current_points": 0,
+  "revealed_cells": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "letter_hints_used": 14,
+  "attempts": [
+    {
+      "timestamp": 9.209575414657593,
+      "action_type": "letter_hint",
+      "points_before": 120,
+      "points_after": 118,
+      "cost": -2,
+      "details": {
+        "hint_number": 1
+      }
+    },
+    {
+      "timestamp": 27.441296339035034,
+      "action_type": "letter_hint",
+      "points_before": 118,
+      "points_after": 116,
+      "cost": -2,
+      "details": {
+        "hint_number": 2
+      }
+    },
+    {
+      "timestamp": 28.176733255386353,
+      "action_type": "letter_hint",
+      "points_before": 116,
+      "points_after": 113,
+      "cost": -3,
+      "details": {
+        "hint_number": 3
+      }
+    },
+    {
+      "timestamp": 40.11768841743469,
+      "action_type": "letter_hint",
+      "points_before": 113,
+      "points_after": 109,
+      "cost": -4,
+      "details": {
+        "hint_number": 4
+      }
+    },
+    {
+      "timestamp": 40.80566334724426,
+      "action_type": "letter_hint",
+      "points_before": 109,
+      "points_after": 104,
+      "cost": -5,
+      "details": {
+        "hint_number": 5
+      }
+    },
+    {
+      "timestamp": 40.977768421173096,
+      "action_type": "letter_hint",
+      "points_before": 104,
+      "points_after": 98,
+      "cost": -6,
+      "details": {
+        "hint_number": 6
+      }
+    },
+    {
+      "timestamp": 41.134347438812256,
+      "action_type": "letter_hint",
+      "points_before": 98,
+      "points_after": 91,
+      "cost": -7,
+      "details": {
+        "hint_number": 7
+      }
+    },
+    {
+      "timestamp": 41.30621838569641,
+      "action_type": "letter_hint",
+      "points_before": 91,
+      "points_after": 83,
+      "cost": -8,
+      "details": {
+        "hint_number": 8
+      }
+    },
+    {
+      "timestamp": 41.82236433029175,
+      "action_type": "letter_hint",
+      "points_before": 83,
+      "points_after": 74,
+      "cost": -9,
+      "details": {
+        "hint_number": 9
+      }
+    },
+    {
+      "timestamp": 42.18279433250427,
+      "action_type": "letter_hint",
+      "points_before": 74,
+      "points_after": 64,
+      "cost": -10,
+      "details": {
+        "hint_number": 10
+      }
+    },
+    {
+      "timestamp": 42.60511922836304,
+      "action_type": "letter_hint",
+      "points_before": 64,
+      "points_after": 53,
+      "cost": -11,
+      "details": {
+        "hint_number": 11
+      }
+    },
+    {
+      "timestamp": 43.38772225379944,
+      "action_type": "letter_hint",
+      "points_before": 53,
+      "points_after": 41,
+      "cost": -12,
+      "details": {
+        "hint_number": 12
+      }
+    },
+    {
+      "timestamp": 43.71602821350098,
+      "action_type": "letter_hint",
+      "points_before": 41,
+      "points_after": 28,
+      "cost": -13,
+      "details": {
+        "hint_number": 13
+      }
+    },
+    {
+      "timestamp": 44.32573843002319,
+      "action_type": "letter_hint",
+      "points_before": 28,
+      "points_after": 14,
+      "cost": -14,
+      "details": {
+        "hint_number": 14
+      }
+    },
+    {
+      "timestamp": 51.49406123161316,
+      "action_type": "cell_reveal",
+      "points_before": 14,
+      "points_after": 14,
+      "cost": 0,
+      "details": {
+        "cell_index": 12
+      }
+    },
+    {
+      "timestamp": 51.75908923149109,
+      "action_type": "cell_reveal",
+      "points_before": 14,
+      "points_after": 13,
+      "cost": -1,
+      "details": {
+        "cell_index": 9
+      }
+    },
+    {
+      "timestamp": 52.306522369384766,
+      "action_type": "cell_reveal",
+      "points_before": 13,
+      "points_after": 11,
+      "cost": -2,
+      "details": {
+        "cell_index": 5
+      }
+    },
+    {
+      "timestamp": 52.54089140892029,
+      "action_type": "cell_reveal",
+      "points_before": 11,
+      "points_after": 8,
+      "cost": -3,
+      "details": {
+        "cell_index": 6
+      }
+    },
+    {
+      "timestamp": 52.82264232635498,
+      "action_type": "cell_reveal",
+      "points_before": 8,
+      "points_after": 4,
+      "cost": -4,
+      "details": {
+        "cell_index": 10
+      }
+    },
+    {
+      "timestamp": 53.87078142166138,
+      "action_type": "cell_reveal",
+      "points_before": 4,
+      "points_after": 0,
+      "cost": -5,
+      "details": {
+        "cell_index": 8
+      }
+    },
+    {
+      "timestamp": 54.10589623451233,
+      "action_type": "cell_reveal",
+      "points_before": 0,
+      "points_after": 0,
+      "cost": -6,
+      "details": {
+        "cell_index": 4
+      }
+    },
+    {
+      "timestamp": 54.40276527404785,
+      "action_type": "cell_reveal",
+      "points_before": 0,
+      "points_after": 0,
+      "cost": -7,
+      "details": {
+        "cell_index": 0
+      }
+    },
+    {
+      "timestamp": 54.63766837120056,
+      "action_type": "cell_reveal",
+      "points_before": 0,
+      "points_after": 0,
+      "cost": -8,
+      "details": {
+        "cell_index": 1
+      }
+    },
+    {
+      "timestamp": 54.85639142990112,
+      "action_type": "cell_reveal",
+      "points_before": 0,
+      "points_after": 0,
+      "cost": -9,
+      "details": {
+        "cell_index": 2
+      }
+    },
+    {
+      "timestamp": 55.47602820396423,
+      "action_type": "cell_reveal",
+      "points_before": 0,
+      "points_after": 0,
+      "cost": -10,
+      "details": {
+        "cell_index": 3
+      }
+    },
+    {
+      "timestamp": 55.70146322250366,
+      "action_type": "cell_reveal",
+      "points_before": 0,
+      "points_after": 0,
+      "cost": -11,
+      "details": {
+        "cell_index": 7
+      }
+    },
+    {
+      "timestamp": 55.95145630836487,
+      "action_type": "cell_reveal",
+      "points_before": 0,
+      "points_after": 0,
+      "cost": -12,
+      "details": {
+        "cell_index": 11
+      }
+    },
+    {
+      "timestamp": 56.20197939872742,
+      "action_type": "cell_reveal",
+      "points_before": 0,
+      "points_after": 0,
+      "cost": -13,
+      "details": {
+        "cell_index": 15
+      }
+    },
+    {
+      "timestamp": 56.49884533882141,
+      "action_type": "cell_reveal",
+      "points_before": 0,
+      "points_after": 0,
+      "cost": -14,
+      "details": {
+        "cell_index": 14
+      }
+    },
+    {
+      "timestamp": 56.702457427978516,
+      "action_type": "cell_reveal",
+      "points_before": 0,
+      "points_after": 0,
+      "cost": -15,
+      "details": {
+        "cell_index": 13
+      }
+    }
+  ],
+  "game_over": true,
+  "game_end_reason": "user_quit",
+  "correct_answer_given": false
+}

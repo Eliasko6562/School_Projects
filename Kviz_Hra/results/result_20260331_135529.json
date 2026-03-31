@@ -1,0 +1,13 @@
+{
+  "question_id": "q001",
+  "start_time": 1774958124.2253788,
+  "elapsed_time": 4.840216159820557,
+  "remaining_time": 595.1597838401794,
+  "current_points": 120,
+  "revealed_cells": [],
+  "letter_hints_used": 0,
+  "attempts": [],
+  "game_over": true,
+  "game_end_reason": "user_quit",
+  "correct_answer_given": false
+}

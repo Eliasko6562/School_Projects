@@ -22,6 +22,7 @@ class GameWindow:
         self.original_image = image
         self.running = False
         self.button_images = {}  # Cache for button images
+        self.answer_var = tk.StringVar()
 
         # Configure window
         self.root.title(config.WINDOW_TITLE)
@@ -88,19 +89,18 @@ class GameWindow:
         grid_frame = tk.Frame(self.root, bg=config.COLOR_INFO_BG)
         grid_frame.pack(pady=10)
 
-        self.grid_buttons = []
-        for row in range(config.GRID_SIZE):
-            button_row = []
-            for col in range(config.GRID_SIZE):
-                cell_index = row * config.GRID_SIZE + col
-                btn = tk.Button(
-                    grid_frame,
-                    command=lambda idx=cell_index: self._on_cell_click(idx)
-                )
-                btn.grid(row=row, column=col, padx=2, pady=2)
-                button_row.append(btn)
+        self.grid_canvas = tk.Canvas(
+            grid_frame,
+            width=config.IMAGE_SIZE[0],
+            height=config.IMAGE_SIZE[1],
+            bd=0,
+            highlightthickness=0
+        )
+        self.grid_canvas.pack()
 
-            self.grid_buttons.append(button_row)
+        self.grid_background_image = ImageTk.PhotoImage(self.original_image)
+        self.grid_canvas.create_image(0, 0, anchor=tk.NW, image=self.grid_background_image)
+        self.grid_canvas.bind("<Button-1>", self._on_canvas_click)
 
         self._update_grid()
 
@@ -139,11 +139,13 @@ class GameWindow:
 
         self.answer_input = tk.Entry(
             input_frame,
+            textvariable=self.answer_var,
             font=config.FONT_ANSWER_INPUT,
             width=40
         )
         self.answer_input.pack(fill=tk.X, pady=5)
         self.answer_input.bind("<Return>", lambda e: self._on_submit_answer())
+        self.answer_var.trace_add("write", self._on_answer_change)
 
         # Buttons frame
         buttons_frame = tk.Frame(self.root, bg=config.COLOR_INFO_BG)
@@ -199,37 +201,102 @@ class GameWindow:
         self.game.start()
 
     def _update_grid(self):
-        """Update grid button appearance based on revealed cells"""
+        """Update the canvas overlay for the hidden tiles."""
+        self.grid_canvas.delete("cell_overlay")
+
         revealed = self.game.get_revealed_cells()
-        
+        cell_width = config.IMAGE_SIZE[0] // config.GRID_SIZE
+        cell_height = config.IMAGE_SIZE[1] // config.GRID_SIZE
+
         for row in range(config.GRID_SIZE):
             for col in range(config.GRID_SIZE):
                 cell_index = row * config.GRID_SIZE + col
-                is_revealed = cell_index in revealed
+                if cell_index in revealed:
+                    continue
 
-                if is_revealed:
-                    # Show the actual image cell when revealed
-                    cells = image_processor.get_grid_cells(self.original_image)
-                    cell_img = cells[cell_index]
-                    button_img = cell_img.resize(
-                        (config.CELL_SIZE, config.CELL_SIZE),
-                        Image.Resampling.LANCZOS
-                    )
-                else:
-                    # Show solid color tile when not revealed (completely hide the image)
-                    button_img = Image.new('RGB', (config.CELL_SIZE, config.CELL_SIZE), config.COLOR_HIDDEN)
+                left = col * cell_width
+                top = row * cell_height
+                right = left + cell_width
+                bottom = top + cell_height
 
-                # Convert to PhotoImage
-                photo = ImageTk.PhotoImage(button_img)
-                self.button_images[cell_index] = photo
+                self.grid_canvas.create_rectangle(
+                    left, top, right, bottom,
+                    fill=config.COLOR_HIDDEN,
+                    outline=config.COLOR_TEXT,
+                    width=1,
+                    tags=("cell_overlay", f"cell_{cell_index}")
+                )
 
-                btn = self.grid_buttons[row][col]
-                btn.config(image=photo)
-                btn.image = photo  # Keep reference
+    def _update_hint_display(self):
+        """Update the hint label based on current typed input and revealed letters."""
+        typed_text = self.answer_var.get() if hasattr(self, 'answer_var') else ""
+        if typed_text:
+            self.hint_display.config(text=self._build_live_preview(typed_text))
+        else:
+            self.hint_display.config(text=self.game.get_hint_string())
 
-                # Disable already revealed buttons
-                if is_revealed:
-                    btn.config(state=tk.DISABLED)
+    def _build_live_preview(self, typed_answer: str) -> str:
+        """Build a live preview of the answer filling blanks as the user types."""
+        typed_letters = [ch for ch in typed_answer if ch != " "]
+        typed_idx = 0
+        revealed_count = getattr(self.game.state, 'letter_hints_used', 0)
+        current_revealed = 0
+        result = ""
+
+        for char in self.game.question.answer:
+            if char == " ":
+                result += "   "
+            elif current_revealed < revealed_count:
+                result += char + " "
+                current_revealed += 1
+            elif typed_idx < len(typed_letters):
+                result += typed_letters[typed_idx].upper() + " "
+                typed_idx += 1
+            else:
+                result += "_ "
+
+        return result.rstrip()
+
+    def _on_answer_change(self, *args):
+        """Update hint preview when the answer input changes."""
+        self._update_hint_display()
+
+    def _on_canvas_click(self, event):
+        """Handle clicks on the image canvas, revealing the clicked tile."""
+        if self.game.is_game_over():
+            messagebox.showwarning("Game Over", "Hra již skončila.")
+            return
+
+        cell_width = config.IMAGE_SIZE[0] // config.GRID_SIZE
+        cell_height = config.IMAGE_SIZE[1] // config.GRID_SIZE
+
+        col = event.x // cell_width
+        row = event.y // cell_height
+
+        if col < 0 or col >= config.GRID_SIZE or row < 0 or row >= config.GRID_SIZE:
+            return
+
+        cell_index = row * config.GRID_SIZE + col
+        result = self.game.reveal_cell(cell_index)
+
+        if result["success"]:
+            self._update_grid()
+            cost = result.get("cost", 0)
+            if cost < 0:
+                self.status_label.config(
+                    text=f"Odkryto políčko. Cena: {cost} bodů",
+                    fg=config.COLOR_TEXT
+                )
+            else:
+                self.status_label.config(
+                    text="Odkryto políčko (zdarma)",
+                    fg=config.COLOR_TEXT
+                )
+        else:
+            self.status_label.config(
+                text=result.get("message", "Chyba"),
+                fg=config.COLOR_WRONG
+            )
 
     def _update_timer(self):
         """Update timer display"""
@@ -252,7 +319,7 @@ class GameWindow:
         self.points_label.config(text=f"{config.TEXT_SCORE} {self.game.get_current_points()}")
 
         # Update hint string
-        self.hint_display.config(text=self.game.get_hint_string())
+        self._update_hint_display()
 
         if self.running:
             self.root.after(200, self._update_timer)
@@ -370,7 +437,7 @@ class GameWindow:
         loader = DataLoader()
         loader.save_results(self.game.get_state_dict())
 
-        self.root.quit()
+        self.root.destroy()
 
     def on_state_change(self, state_dict: dict):
         """Callback for game state changes"""
